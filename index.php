@@ -9,8 +9,19 @@ $('document').ready(function(){
 		var lastSelected = null;
 		
 		$('.selectingBox').on('click', function(e){
+			e.stopPropagation();
+			if(!e.ctrlKey)
+				$('.selectedBox').removeClass('selectedBox');
 			$(this).addClass('selectedBox');
-		
+			if(!e.shiftKey)
+				lastSelected = $('.selectingBox').index($(this));
+			if(e.shiftKey && lastSelected != null){
+				var currentSelected = $('.selectingBox').index($(this));
+				var inc = (lastSelected < currentSelected) ? 1 : -1;
+				for(var i = lastSelected; i != currentSelected; i+= inc){
+					$('.selectingBox').eq(i).addClass("selectedBox");
+				}
+			}
 		});
 
 		$('#back').on('click', function(){
