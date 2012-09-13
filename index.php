@@ -28,7 +28,58 @@ $('document').ready(function(){
 			$('.selectedBox').removeClass('selectedBox');
 		});
 
-	
+		$('#back').on('mousedown', function(e){
+			var beginX = e.pageX;
+			var beginY = e.pageY;
+			
+			e.stopPropagation();
+			$('#back, #selection').on('mousemove', function(e){ 
+				diffY = e.pageY-beginY;
+				diffX = e.pageX-beginX;
+				var height = 0;
+				if(diffY < 0) {
+					startY = e.pageY;
+					height = -1*diffY;
+				}else{
+					startY = beginY;
+					height = diffY;
+				}
+				
+				if(diffX < 0){
+					startX = e.pageX;
+					width = -1*diffX;
+				}else{
+					startX = beginX;
+					width = diffX;
+				}
+				
+				$('#selection').css({
+					'left' : startX+"px",
+					'width' : width+"px",
+					'top' : startY+"px",
+					'height': height+"px"
+				}).show();
+			
+				
+				
+				
+				
+		//LAV MOUSEMOVE - WHILE MOUSEDOWN	
+		//TEGN FIRKANT
+		//FIND ALLE DERINDE (LISTE MED X- OG Y-KOORDINATER?)
+
+
+
+			});
+		});
+		
+
+		
+		$('#back, #selection, #selectionBox').on('mouseup', function(e){
+			
+			$('#selection').css({'height': '0px', 'width':'0px'}).hide();
+			$('#back').off('mousemove');
+		});
 		
 		
 });
@@ -58,6 +109,18 @@ body{background-color: #ccc;}
 	padding:10px;
 }
 
+#selection{
+	  -moz-opacity: .20;
+  -khtml-opacity: .20;
+  -webkit-opacity: .20;
+  opacity: .20;	
+  background-color:#09F;
+  height: 100px; 
+  display: none;
+  width: 100px;
+  position: absolute;
+  border: 1px solid  #00f;
+}
 </style>
 </head>
  <body>
@@ -93,5 +156,6 @@ body{background-color: #ccc;}
 	<div class="selectingBox"></div>
 	<br style="clear:both;"  />
 </div>
+<div id="selection"> </div>
 </body>
 </html>
