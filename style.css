@@ -1,0 +1,46 @@
+body{
+			padding: 0;
+			margin: 0;
+		}
+		.selectingBox{
+			width: 100px;
+			height:100px;
+			background-color:#afa;
+			border: 1px solid #ccc;
+			float:left;
+			margin: 0 10px 10px 0;
+		}
+		
+		.selectingBox:hover{
+			background-color: #9f9;
+			border: 1px solid #999;
+			
+		}
+		.selectedBox, .selectedBox:hover{
+			background-color: #a00;
+			border: 1px solid #ccc;
+		}
+		
+		body{
+			background-color: #ccc;
+		}
+		 
+		#back{
+			width: 100%;
+			min-height:500px;
+			background-color:#aaa;
+			padding:30px;
+		}
+		
+		#selection{
+			-moz-opacity: .20;
+			-khtml-opacity: .20;
+			-webkit-opacity: .20;
+			opacity: .20;	
+			background-color:#09F;
+			height: 100px; 
+			display: none;
+			width: 100px;
+			position: absolute;
+			border: 1px solid  #00f;
+		}
