@@ -6,7 +6,20 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript">
 $('document').ready(function(){
+		var lastSelected = null;
+		
+		$('.selectingBox').on('click', function(e){
+			$(this).addClass('selectedBox');
+		
+		});
 
+		$('#back').on('click', function(){
+			$('.selectedBox').removeClass('selectedBox');
+		});
+
+	
+		
+		
 });
 </script>
 
