@@ -45,13 +45,20 @@ $('document').ready(function(){
 					startX = beginX;
 					width = diffX;
 				}
-				
+				var selectionBox = {
+					'top': startY,
+					'left': startX,
+					'right': startX+width,
+					'bottom':startY+height
+				}
+				markOverlap(selectionBox);
 				$('#selection').css({
 					'left' : startX+"px",
 					'width' : width+"px",
 					'top' : startY+"px",
 					'height': height+"px"
 				}).show();
+				
 
 				//FIND ALLE DERINDE (LISTE MED X- OG Y-KOORDINATER?)
 			});
@@ -66,17 +73,25 @@ $('document').ready(function(){
 		
 		var files = [];
 		$('.selectingBox').each(function(){
+			var offset = $(this).offset();
 			var tempElement = {
-				'position' : $(this).offset(),
-				'width': $(this).outerWidth(),
-				'height':$(this).outerHeight()
+				'top' : offset.top,
+				'left': offset.left,
+				'right': offset.left+$(this).outerWidth(),
+				'bottom':offset.top+$(this).outerHeight(),
+				
+				'element': $(this)
 			}
 			files.push(tempElement);
-		});
-		detectOverlap(23);
-		function detectOverlap(selection){
-			console.log(files);	
 			
+		});
+	
+		function markOverlap(s){
+			$.each(files, function(index, b){
+				yOverlap = (s.top<b.bottom && s.bottom>b.top);
+				xOverlap = (s.left < b.right && s.right > b.left);
+				if(yOverlap && xOverlap)
+					$(b.element).addClass('selectedBox')
+			});
 		}
-		
-	});
+	});	
