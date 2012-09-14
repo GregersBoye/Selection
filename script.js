@@ -91,7 +91,9 @@ $('document').ready(function(){
 				yOverlap = (s.top<b.bottom && s.bottom>b.top);
 				xOverlap = (s.left < b.right && s.right > b.left);
 				if(yOverlap && xOverlap)
-					$(b.element).addClass('selectedBox')
+					$(b.element).addClass('selectedBox');
+				else	
+					$(b.element).removeClass('selectedBox');
 			});
 		}
 	});	
