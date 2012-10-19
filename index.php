@@ -12,35 +12,35 @@
 </head>
 <body>
 	<div id="back">
-		<div class="selectingBox"></div>
-		<div class="selectingBox"></div>
-		<div class="selectingBox"></div>
-		<div class="selectingBox"></div>
-		<div class="selectingBox"></div>
-		<div class="selectingBox"></div>
-		<div class="selectingBox"></div>
-		<div class="selectingBox"></div>
-		<div class="selectingBox"></div>
+		<div class="selectingBox folder"></div>
+		<div class="selectingBox folder"></div>
+		<div class="selectingBox folder"></div>
+		<div class="selectingBox folder"></div>
+		<div class="selectingBox folder"></div>
+		<div class="selectingBox file"></div>
+		<div class="selectingBox file"></div>
+		<div class="selectingBox file"></div>
+		<div class="selectingBox file"></div>
 		
-		<div class="selectingBox"></div>
-		<div class="selectingBox"></div>
-		<div class="selectingBox"></div>
-		<div class="selectingBox"></div>
-		<div class="selectingBox"></div>
-		<div class="selectingBox"></div>
-		<div class="selectingBox"></div>
-		<div class="selectingBox"></div>
-		<div class="selectingBox"></div>
+		<div class="selectingBox file"></div>
+		<div class="selectingBox file"></div>
+		<div class="selectingBox file"></div>
+		<div class="selectingBox file"></div>
+		<div class="selectingBox file"></div>
+		<div class="selectingBox file"></div>
+		<div class="selectingBox file"></div>
+		<div class="selectingBox file"></div>
+		<div class="selectingBox file"></div>
 		
-		<div class="selectingBox"></div>
-		<div class="selectingBox"></div>
-		<div class="selectingBox"></div>
-		<div class="selectingBox"></div>
-		<div class="selectingBox"></div>
-		<div class="selectingBox"></div>
-		<div class="selectingBox"></div>
-		<div class="selectingBox"></div>
-		<div class="selectingBox"></div>
+		<div class="selectingBox file"></div>
+		<div class="selectingBox file"></div>
+		<div class="selectingBox file"></div>
+		<div class="selectingBox file"></div>
+		<div class="selectingBox file"></div>
+		<div class="selectingBox file"></div>
+		<div class="selectingBox file"></div>
+		<div class="selectingBox file"></div>
+		<div class="selectingBox file"></div>
 		<br style="clear:both;"  />
 	</div>
 	<div id="selection"> </div>
