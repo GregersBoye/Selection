@@ -13,18 +13,14 @@ body{
 			margin: 0 10px 10px 0;
 		}
 		.file{
-				background-image:url(gfx/file_sprite.png);
+			background-image:url(gfx/file_sprite.png);
 		}
 		
 		.folder{
-		
-			
 			background-image:url(gfx/folder_sprite.png);
 		}
 		
-		.selectingFolder:hover{
-			background-color:#a7a7a7;
-		}
+		
 		.selectingBox:hover{
 			background-position: 0 -100px;
 			

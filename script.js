@@ -1,7 +1,16 @@
 $('document').ready(function(){
 		var lastSelected = null;
 		
+		$('.selectingBox').on('mousedown', function(e){
+			e.stopPropagation();	
+			console.log("mouseDown på fil");
+			$('.selectingBox').on('mousemove', function(e){	
+			});
+		});
+		
+		
 		$('.selectingBox').on('click', function(e){
+			
 			e.stopPropagation();
 			if(!e.ctrlKey)
 				$('.selectedBox').removeClass('selectedBox');
@@ -17,11 +26,13 @@ $('document').ready(function(){
 			}
 		});
 	
-		$('#back').on('click', function(){
-			$('.selectedBox').removeClass('selectedBox');
+		$('#back').on('click', function(e){
+			console.log("klik på back"); 
+				$('.selectedBox').removeClass('selectedBox');
 		});
 	
 		$('#back').on('mousedown', function(e){
+			console.log('mouseDown på back');
 			var beginX = e.pageX;
 			var beginY = e.pageY;
 			
@@ -66,6 +77,7 @@ $('document').ready(function(){
 	
 		$('#back, #selection, #selectionBox').on('mouseup', function(e){
 			$('#selection').css({'height': '0px', 'width':'0px'}).hide();
+			$('.tempSelected').removeClass('tempSelected');
 			$('#back').off('mousemove');
 		});	
 		
@@ -85,15 +97,18 @@ $('document').ready(function(){
 			files.push(tempElement);
 			
 		});
+		
+		
 	
 		function markOverlap(s){
 			$.each(files, function(index, b){
 				yOverlap = (s.top<b.bottom && s.bottom>b.top);
 				xOverlap = (s.left < b.right && s.right > b.left);
-				if(yOverlap && xOverlap)
-					$(b.element).addClass('selectedBox');
-				else	
-					$(b.element).removeClass('selectedBox');
+				if(yOverlap && xOverlap){
+					if(!$(b.element).hasClass('selectedBox'))	
+						$(b.element).addClass('selectedBox tempSelected');
+				}else if($(b.element).hasClass('tempSelected'))	
+					$(b.element).removeClass('selectedBox').removeClass('tempSelected');
 			});
 		}
 	});	
