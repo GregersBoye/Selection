@@ -5,7 +5,7 @@ body{
 		.selectingBox{
 			width: 100px;
 			height:100px;
-			
+			z-index: 2;
 			
 			background-image:url(gfx/file_sprite.png);
 			border: 1px solid #aaa;
